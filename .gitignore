@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+.kotlin
+local.properties
+
+# Le modèle Philidor : à télécharger depuis la page Releases, jamais commité.
+app/src/main/assets/*.onnx
