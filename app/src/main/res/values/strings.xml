@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Philidor</string>
+    <string name="white">blancs</string>
+    <string name="black">noirs</string>
+    <string name="hasardus">hasard</string>
+    <string name="your_color">Votre couleur</string>
+    <string name="creativity">Créativité</string>
+    <string name="title">Philidor 51M</string>
+    <string name="description">Une IA d\'échecs dans votre téléphone</string>
+    <string name="careful">prudent</string>
+    <string name="surprising">surprenant</string>
+    <string name="new_game">Nouvelle partie</string>
+    <string name="history">Historique des parties</string>
 </resources>

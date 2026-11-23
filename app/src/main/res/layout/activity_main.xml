@@ -5,15 +5,159 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
+
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/couleur"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:checkedButton="@id/blancs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <Button
+            android:id="@+id/blancs"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/white" />
+
+        <Button
+            android:id="@+id/noirs"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/black" />
+
+        <Button
+            android:id="@+id/hasard"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/hasardus" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/creativite"
+        android:layout_width="350dp"
+        android:layout_height="43dp"
+        android:stepSize="0.1"
+        android:value="0.6"
+        android:valueFrom="0.0"
+        android:valueTo="1.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/couleur"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:icon="@android:drawable/ic_dialog_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgMainLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/couleur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35000002"
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        android:text="@string/your_color"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/couleur"
+        app:layout_constraintStart_toStartOf="@+id/couleur" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/creativity"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/creativite"
+        app:layout_constraintStart_toStartOf="@+id/creativite" />
+
+    <TextView
+        android:id="@+id/tvMainTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imgMainLogo"
+        app:layout_constraintStart_toStartOf="@+id/imgMainLogo"
+        app:layout_constraintTop_toBottomOf="@+id/imgMainLogo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        app:layout_constraintEnd_toEndOf="@+id/tvMainTitle"
+        app:layout_constraintStart_toStartOf="@+id/tvMainTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvMainTitle" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/careful"
+        app:layout_constraintStart_toStartOf="@+id/creativite"
+        app:layout_constraintTop_toBottomOf="@+id/creativite" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/surprising"
+        app:layout_constraintEnd_toEndOf="@+id/creativite"
+        app:layout_constraintTop_toBottomOf="@+id/creativite" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/butNewGame"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/new_game"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/creativite" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/butViewHisto"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/history"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/butNewGame" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
