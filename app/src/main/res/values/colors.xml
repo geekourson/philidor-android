@@ -7,6 +7,14 @@
     <color name="green_medium">#5D7F2B</color>
     <color name="red">#B24434</color>
     <color name="grey">#93A2B6</color>
+    <color name="grey_light">#CED3D3</color>
+    <color name="green_echiquier_light">#EEEED4</color>
+    <color name="green_echiquier_dark">#7C955E</color>
+    <color name="green_player_background">#E9F6EF</color>
+
+
+
+
 </resources>
 
 

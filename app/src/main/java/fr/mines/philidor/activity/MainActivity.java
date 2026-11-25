@@ -9,6 +9,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.security.SecureRandom;
+import java.util.Random;
+
 import fr.mines.philidor.R;
 import fr.mines.philidor.databinding.ActivityMainBinding;
 
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public enum COULEUR {blanc, noir, hasard};
 
     private ActivityMainBinding binding;
+    private SecureRandom random;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        this.random = new SecureRandom();
 
         binding.butNewGame.setOnClickListener(v -> {
             COULEUR couleur;
@@ -39,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
             } else if (butId == R.id.noirs) {
                 couleur = COULEUR.noir;
             } else {
-                couleur = COULEUR.hasard;
+                boolean isWhite = random.nextBoolean();
+                couleur = isWhite ? COULEUR.blanc : COULEUR.noir;
             }
 
             float creativite = binding.creativite.getValue();
